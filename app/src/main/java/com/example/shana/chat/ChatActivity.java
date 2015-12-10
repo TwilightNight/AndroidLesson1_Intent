@@ -18,13 +18,13 @@ public class ChatActivity extends Activity {
     public static final int CHAT_ACTIVITY_SUCCESS_CODE = 777;
 
     @Bind(R.id.activity_main_text)
-    protected TextView textView;
+    TextView textView;
 
     @Bind(R.id.activity_main_edit)
-    protected EditText editText;
+    EditText editText;
 
     @OnClick(R.id.activity_main_button)
-    protected void onSendMessage(){
+    void onSendMessage() {
         finishPageWithMessage(editText.getText().toString());
     }
 

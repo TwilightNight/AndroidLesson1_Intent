@@ -15,13 +15,13 @@ import butterknife.OnClick;
  */
 public class MainActivity extends Activity {
     @Bind(R.id.activity_main_text)
-    protected TextView textView;
+    TextView textView;
 
     @Bind(R.id.activity_main_edit)
-    protected EditText editText;
+    EditText editText;
 
     @OnClick(R.id.activity_main_button)
-    protected void onSendMessage(){
+    void onSendMessage() {
         sendMessageToNextPage(editText.getText().toString());
     }
 
@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
     }
 
-    private void sendMessageToNextPage(String message){
+    private void sendMessageToNextPage(String message) {
         Intent intent = new Intent(this, ChatActivity.class);
         intent.putExtra(ChatActivity.CHAT_ACTIVITY_WORD_KEY, message);
         startActivityForResult(intent, ChatActivity.CHAT_ACTIVITY_SUCCESS_CODE);
